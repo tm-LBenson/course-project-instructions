@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Java Project Guide</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <!--* Main Project Accordion -->
+      <div class="accordion" id="mainProjectAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingProject">
+            <button
+              class="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseProject"
+              aria-expanded="true"
+              aria-controls="collapseProject"
+            >
+              Project Overview: courseProject
+            </button>
+          </h2>
+          <div
+            id="collapseProject"
+            class="accordion-collapse collapse show"
+            aria-labelledby="headingProject"
+          >
+            <div class="accordion-body">
+              <p class="alert alert-info" role="alert">
+                <strong>Website Usage Instructions:</strong> This website is
+                designed to assist you in understanding and completing the
+                Course Project Phase 1 - Creating a Java Banking Application.
+                Please follow the instructions below to navigate through the
+                project and its phases.
+              </p>
+
+              <!--? Nested Accordions for Each Class -->
+              <!--* DataEntry.java Accordion -->
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingDataEntry">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseDataEntry"
+                    aria-expanded="false"
+                    aria-controls="collapseDataEntry"
+                  >
+                    DataEntry.java
+                  </button>
+                </h2>
+                <div
+                  id="collapseDataEntry"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingDataEntry"
+                >
+                  <!-- DataEntry.java Methods Description -->
+                  <div class="accordion-body">
+                    <p>
+                      Class <code>DataEntry.java</code> plays a crucial role in
+                      managing user input and ensuring it conforms to specific
+                      validation rules. In implementing this class, it's
+                      important to include a <code>Scanner</code> object as a
+                      class property. This approach is efficient because
+                      creating a new <code>Scanner</code> instance within each
+                      method could lead to potential issues, such as unexpected
+                      input behavior or resource leaks. Here’s a general
+                      approach for implementing the class: - Define a static
+                      <code>Scanner</code> object at the class level. This makes
+                      the <code>Scanner</code> accessible to all methods within
+                      the class without needing to instantiate it multiple
+                      times. - Each method in the class should focus on a
+                      specific type of data entry and validation. For instance,
+                      methods for entering string data, numeric data, or dates,
+                      each handling the peculiarities of these data types. -
+                      Consider adding robustness to your data entry methods by
+                      throwing exceptions when input doesn’t meet the expected
+                      criteria. This way, you can handle validation errors
+                      gracefully. - In the main method of your application
+                      (typically in another class like
+                      <code>BankAcctApp.java</code>), you can use try-catch
+                      blocks to handle any exceptions thrown by the
+                      <code>DataEntry</code> methods. This not only helps in
+                      catching and managing errors but also in maintaining a
+                      clean flow of your application’s logic. Below is a summary
+                      of each method required for the project, presented in
+                      pseudocode to illustrate the fundamental logic behind data
+                      entry and validation. Keep in mind that the pseudocode is
+                      a guide and should be adapted into actual Java code,
+                      incorporating best practices like exception handling as
+                      mentioned above.
+                    </p>
+
+                    <!-- Entry of string data with no limit -->
+                    <div>
+                      <strong
+                        >Method: Entry of string data with no limit</strong
+                      >
+                      <pre>
+// Pseudocode
+Prompt user for input without a length limit.
+Read and return the user input as a string.
+    </pre
+                      >
+                    </div>
+
+                    <!-- Entry of string data but with a length limit -->
+                    <div>
+                      <strong
+                        >Method: Entry of string data with a length
+                        limit</strong
+                      >
+                      <pre>
+// Pseudocode
+Prompt user for input, specifying a maximum length.
+Read the string input.
+Verify the length does not exceed the specified maximum.
+Return the validated input.
+    </pre
+                      >
+                    </div>
+
+                    <!-- Entry of string data that must only have numeric values -->
+                    <div>
+                      <strong
+                        >Method: Entry of string data that must only have
+                        numeric values</strong
+                      >
+                      <pre>
+// Pseudocode
+Prompt user for a numeric string input.
+Read the string input.
+Check if the input is numeric.
+Return the numeric string if validation passes.
+    </pre
+                      >
+                    </div>
+
+                    <!-- Entry of integer data -->
+                    <div>
+                      <strong>Method: Entry of integer data</strong>
+                      <pre>
+// Pseudocode
+Prompt user for an integer input.
+Read and return the integer input.
+    </pre
+                      >
+                    </div>
+
+                    <!-- Entry of integer data with a range limit -->
+                    <div>
+                      <strong
+                        >Method: Entry of integer data with a range
+                        limit</strong
+                      >
+                      <pre>
+// Pseudocode
+Prompt user for an integer within a specified range.
+Read the integer input.
+Ensure the input falls within the specified range.
+Return the integer if it passes the range check.
+    </pre
+                      >
+                    </div>
+
+                    <!-- Entry of decimal data -->
+                    <div>
+                      <strong>Method: Entry of decimal data</strong>
+                      <pre>
+// Pseudocode
+Prompt user for a decimal number input.
+Read and return the decimal input.
+    </pre
+                      >
+                    </div>
+
+                    <!-- Entry of decimal data with a range limit -->
+                    <div>
+                      <strong
+                        >Method: Entry of decimal data with a range
+                        limit</strong
+                      >
+                      <pre>
+// Pseudocode
+Prompt user for a decimal number within a specific range.
+Read the decimal input.
+Verify the input is within the allowed range.
+Return the decimal number if it passes verification.
+    </pre
+                      >
+                    </div>
+
+                    <!-- Entry of a date -->
+                    <div>
+                      <strong>Method: Entry of a date</strong>
+                      <pre>
+// Pseudocode
+Prompt user for a date, specifying the format (e.g., dd-mm-yyyy).
+Read the date input.
+Validate the date format.
+Return the date if it matches the expected format.
+    </pre
+                      >
+                    </div>
+
+                    <!-- Note: These pseudocode examples are designed to convey the logical steps involved in each method without delving into specific Java syntax or error handling. -->
+                  </div>
+                </div>
+              </div>
+
+              <!-- Customer.java Accordion -->
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingCustomer">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseCustomer"
+                    aria-expanded="false"
+                    aria-controls="collapseCustomer"
+                  >
+                    Customer.java
+                  </button>
+                </h2>
+                <div
+                  id="collapseCustomer"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingCustomer"
+                >
+                  <!-- Customer.java Class Instructions and Description -->
+                  <div class="accordion-body">
+                    <p>
+                      The <code>Customer</code> class encapsulates the details
+                      of a customer, using private variables for data
+                      encapsulation. This approach prevents direct access to the
+                      class's fields from outside, ensuring data integrity and
+                      allowing controlled access via public getters and setters.
+                      Below is the declaration of properties within the
+                      <code>Customer</code> class, exemplified by getters and
+                      setters, followed by a general pattern for creating these
+                      methods for all properties.
+                    </p>
+
+                    <strong>Property Declarations</strong>
+                    <pre>
+private String customerId;
+private String customerSSN;
+private String lastName;
+private String firstName;
+private String street;
+private String city;
+private String state;
+private String zip;
+private String phone;
+  </pre
+                    >
+
+                    <p>
+                      After declaring these properties as private, we provide
+                      controlled access to them through public getters and
+                      setters. This allows us to enforce any necessary
+                      validation or preprocessing before a property is accessed
+                      or modified.
+                    </p>
+
+                    <strong>Examples of Getters and Setters</strong>
+                    <!-- Example for Customer ID -->
+                    <pre>
+// Getter for Customer ID
+public String getCustomerId() {
+    return customerId;
+}
+
+// Setter for Customer ID
+public void setCustomerId(String customerId) {
+    this.customerId = customerId;
+}
+  </pre
+                    >
+
+                    <!-- Example for Customer SSN -->
+                    <pre>
+// Getter for Customer SSN
+public String getCustomerSSN() {
+    return customerSSN;
+}
+
+// Setter for Customer SSN
+public void setCustomerSSN(String customerSSN) {
+    this.customerSSN = customerSSN;
+}
+  </pre
+                    >
+
+                    <strong
+                      >Pseudocode for Generating Getters and Setters</strong
+                    >
+                    <p>
+                      For each private property in the
+                      <code>Customer</code> class, you will generate a getter
+                      and setter. The getter method returns the property's
+                      value, and the setter method assigns a new value to the
+                      property. This pattern is repeated for all properties to
+                      ensure that data can be safely accessed and modified.
+                    </p>
+                    <pre>
+// General pattern for generating getters and setters
+For each property 'prop' of type 'Type':
+    
+    // Generate a getter for the property
+    Define a public method named getProp() {
+        return the property 'prop';
+    }
+
+    // Generate a setter for the property
+    Define a public method named setProp(Type parameter) {
+        this.prop = parameter;
+    }
+  </pre
+                    >
+
+                    <p>
+                      Although you can manually write getters and setters,
+                      Eclipse IDE offers a convenient way to generate them
+                      automatically, ensuring the methods are correctly
+                      implemented and consistent. Here's how to generate getters
+                      and setters in Eclipse:
+                    </p>
+                    <ol>
+                      <li>
+                        Right-click in the class file editor window within
+                        Eclipse.
+                      </li>
+                      <li>
+                        Select <code>Source</code> >
+                        <code>Generate Getters and Setters...</code>.
+                      </li>
+                      <li>
+                        Choose the fields for which you wish to generate
+                        methods.
+                      </li>
+                      <li>
+                        Decide on the insertion point for the generated code in
+                        your class file.
+                      </li>
+                      <li>Click <code>OK</code>.</li>
+                    </ol>
+
+                    <div>
+                      <p class="alert alert-primary">
+                        A <strong>constructor</strong> in Java is a special
+                        method used to initialize new objects. It has the same
+                        name as the class and does not return any value, not
+                        even void. Constructors are called when an instance of
+                        the class is created, providing an opportunity to set
+                        initial values for object attributes or perform any
+                        setup required.
+                      </p>
+                      <p>
+                        In the <code>Customer</code> class, the constructor
+                        plays a vital role in initializing a new Customer object
+                        with input validated through user interaction. This is
+                        achieved by incorporating the
+                        <code>DataEntry</code> class, which is designed to
+                        collect and validate user input according to predefined
+                        rules. Here's a breakdown of how this process works
+                        within the constructor:
+                      </p>
+                      <ol>
+                        <li>
+                          <strong>Output Request to User:</strong> Use
+                          <code>System.out.println</code> to request data from
+                          the user. For example, to ask for the customer's ID:
+                          <pre>
+System.out.println("Enter Customer ID (1-5 characters):");</pre
+                          >
+                        </li>
+                        <li>
+                          <strong>Collect and Validate Input:</strong>
+                          Immediately after requesting input, utilize the static
+                          methods from the <code>DataEntry</code> class to read
+                          and validate the input. Here's an example of how to
+                          collect the Customer ID, assuming a method named
+                          <code>enterStringDataWithLimit</code> exists in
+                          <code>DataEntry</code>:
+                          <p class="alert alert-warning">
+                            Note: You probably named your method for gathering
+                            string data with a limit something else, and not
+                            enterStringDataWithLimit. Be sure to check your
+                            DataEntry file to verify the name.
+                          </p>
+                          <pre>
+String inputID = DataEntry.enterStringDataWithLimit(5, 1);</pre
+                          >
+                          This line reads input from the user, ensuring it
+                          adheres to the length restrictions before assigning it
+                          to <code>inputID</code>.
+                        </li>
+                        <li>
+                          <strong>Use Setters to Assign Validated Data:</strong>
+                          Once the data is collected and validated, use the
+                          class's setter methods to assign the values to the
+                          object's properties. For example:
+                          <pre>setCustomerId(inputID);</pre>
+                        </li>
+                      </ol>
+                      <p>
+                        Following this pattern, collect and validate inputs for
+                        all properties of the <code>Customer</code> class using
+                        pseudocode to guide the implementation:
+                      </p>
+                      <pre>
+// Pseudocode
+Output request for Customer SSN.
+String inputSSN = DataEntry.methodForNumericStringData(9); // Replace method name as appropriate.
+setCustomerSSN(inputSSN);
+
+// Repeat for other properties...
+  </pre
+                      >
+                      <p>
+                        Using the <code>DataEntry</code> class in this manner
+                        ensures each property of the
+                        <code>Customer</code> object is initialized with
+                        validated data, enhancing the robustness and reliability
+                        of your application.
+                      </p>
+                    </div>
+
+                    <div>
+                      <p>
+                        The <code>toString</code> method in the
+                        <code>Customer</code> class is annotated with
+                        <code>@Override</code> to indicate that it replaces the
+                        default <code>toString()</code> implementation inherited
+                        from the <code>Object</code> class. This method provides
+                        a formatted string representation of the Customer
+                        object, including all its properties, which is
+                        especially useful for logging or displaying customer
+                        information clearly.
+                      </p>
+                      <p class="alert alert-primary">
+                        Note: The toString() method can be generated following
+                        the exact instructions as when we generated the
+                        "getters" and "setters."
+                      </p>
+                      <pre>
+@Override
+public String toString() {
+    return "Customer [customerId=" + customerId + ", customerSSN=" + customerSSN + ", lastName=" + lastName
+            + ", firstName=" + firstName + ", street=" + street + ", city=" + city + ", state=" + state + ", zip="
+            + zip + ", phone=" + phone + "]";
+}
+  </pre
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- BankAcctApp.java Accordion -->
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingBankAcctApp">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseBankAcctApp"
+                    aria-expanded="false"
+                    aria-controls="collapseBankAcctApp"
+                  >
+                    BankAcctApp.java
+                  </button>
+                </h2>
+                <div
+                  id="collapseBankAcctApp"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingBankAcctApp"
+                >
+                  <div class="accordion-body">
+                    <p>
+                      The <code>BankAcctApp.java</code> serves as the
+                      application's main entry point, where we demonstrate
+                      initializing and using customer objects. According to the
+                      instructions, we are required to create two instances of a
+                      customer, showcasing how objects are instantiated and
+                      utilized within our application.
+                    </p>
+                    <div class="alert alert-warning" role="alert">
+                      <strong>Note:</strong> While this example uses a general
+                      <code>Exception</code> type in the catch block, ensure
+                      that the specific type of exception caught matches the
+                      errors thrown within your application. This might require
+                      adjusting the catch statement to align with the exceptions
+                      thrown by your <code>Customer</code> class or
+                      <code>DataEntry</code> methods.
+                    </div>
+                    <strong>Example with Try-Catch Block:</strong>
+                    <pre>
+public static void main(String[] args) {
+    try {
+        Customer customer1 = new Customer();
+        System.out.println("Customer 1 created successfully: " + customer1.toString());
+        
+        Customer customer2 = new Customer();
+        System.out.println("Customer 2 created successfully: " + customer2.toString());
+    } catch (Exception e) { // Adapt this to catch specific exceptions as needed
+        System.err.println("Error creating customer: " + e.getMessage());
+    }
+}
+  </pre
+                    >
+                    <p>
+                      This implementation highlights the application's
+                      capability to interactively create and manage customer
+                      objects, complete with error handling to catch and report
+                      issues during runtime. Adapting the catch block to handle
+                      specific exceptions allows for more nuanced error
+                      management, improving the application's robustness and
+                      reliability.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="alert alert-warning" role="alert">
+        <strong>Alert:</strong> Please note that this implementation of the
+        assignment has not yet been graded. These instructions are intended to
+        help you understand the Course Project Phase 1 as I interupted them.
+        Ensure you refer to the original project guidelines provided by
+        Professor Haseltine for official grading criteria.
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
